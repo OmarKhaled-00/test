@@ -8,6 +8,7 @@
     --main-heading-p-color:#777;
     --transparent-color:rgb(15 116 143 / 70%);;
     --transparent-color-dark:rgb(0 0 0 / 50%);
+    --bg-color-failed:rgb(51, 53, 51);
     /* Layout */
     --main-section-padding-topBottom:100px;
     --main-section-padding-leftRight:15px;
@@ -16,7 +17,6 @@
     --main-heading-h2-beforeAfter-color:#333;
     --main-heading-p-lineHeight:2;
     --main-heading-p-margin-bottom:100px;
-    
 }
 /* ================================= */
 /* =====End Global Variables====== */
@@ -31,24 +31,28 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
 }
 
 body {
     font-family: "Open Sans", sans-serif;
     background-color: var(--main-background-color);
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
 /* =========================== */
 /* =====End Global Rules====== */
 /* =========================== */
 
-
-/* ============================ */
-/* ======== Frame-work ========*/
-/* ============================ */
+/* ================================== */
+/* ======== Start Components ========*/
+/* ================================== */
 
 
 /* Generic container padding & centering */
@@ -58,73 +62,56 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
-
 /* Main section heading style */
 .main-heading {
-    text-align: center; /*Align center the text in main heading*/
+    text-align: center; 
 }
 .main-heading h2{
-    font-size: var(--main-heading-h2-fontSize); /*Large text*/
-    font-weight: normal; /*Normal in font weight*/
-    position: relative; /*Poistion is relative to itself*/
-    text-transform: uppercase; /*Uppercase the letters*/
-    margin-bottom: var(--main-heading-h2-marginBottom); /*Margin bottom the heading*/
+    font-size: var(--main-heading-h2-fontSize); 
+    font-weight: normal; 
+    position: relative; 
+    text-transform: uppercase; 
+    margin-bottom: var(--main-heading-h2-marginBottom); 
 }
-
 .main-heading h2::before {
     content: "";
-    position: absolute; /*Absolute to parent poistion*/
-    width: 120px; /*width*/
-    height: 2px; /*Height*/
-    background-color: var(--main-heading-h2-beforeAfter-color); /*Color*/
-    bottom: -30px; /*bottom to -30px*/
-    left: 50%; /*left to 50%*/
-    transform: translateX(-50%); /*Translate x to -50%*/
+    position: absolute; 
+    width: 120px; 
+    height: 2px; 
+    background-color: var(--main-heading-h2-beforeAfter-color); 
+    bottom: -30px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
-
 .main-heading h2::after {
     content: "";
-    position: absolute;/*Absolute to parent poistion*/
-    border-radius: 50%; /*border-redius to 50%*/
-    width: 14px;/*width*/
-    height: 14px;/*Height*/
-    border: 2px solid var(--main-heading-h2-beforeAfter-color);/*Color*/
-    bottom: -30px;/*bottom to -30px*/
-    left: 50%;/*left to 50%*/
-    background-color: var(--main-background-color); /*Background color */
-    transform: translate(-50% , 40%);/*Translate x to -50% and y to 40% */
+    position: absolute;
+    border-radius: 50%; 
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--main-heading-h2-beforeAfter-color);
+    bottom: -30px;
+    left: 50%;
+    background-color: var(--main-background-color); 
+    transform: translate(-50% , 40%);
 }
-
 /* Paragraph directly under a section heading */
 .main-heading p {
-  color: var(--main-heading-p-color); /*Color Text*/
-  line-height: var(--main-heading-p-lineHeight); /*Line height of the text*/
-  margin: 0 auto var(--main-heading-p-margin-bottom);/*Margin  the text*/
-  max-width: 100%; /*Max width for it 100%*/
-  width: 550px; /*Initial width*/
+  color: var(--main-heading-p-color); 
+  line-height: var(--main-heading-p-lineHeight);
+  margin: 0 auto var(--main-heading-p-margin-bottom);
+  max-width: 100%; 
+  width: 550px;
 }
 /* General padding for a section */
 .section-layout {
-    padding-top: var(--main-section-padding-topBottom); /* Top space */
-    padding-bottom: var(--main-section-padding-topBottom); /* Bottom space */
+    padding-top: var(--main-section-padding-topBottom); 
+    padding-bottom: var(--main-section-padding-topBottom); 
     
 }
-/* Responsive grid layout with spacing between items */
-.grid-col-gap30 {
-     display: grid; /* CSS grid layout */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-responsive grid */
-    grid-gap: 30px; /* Gap between columns */
-}
-
-/* ============================ */
-/* ==== End of Frame-work ==== */
-/* ============================ */
-
+/* ================================ */
+/* ======== End Components ========*/
+/* ================================ */
 
 /* ======================== */
 /* ==== Header Section ==== */
@@ -136,7 +123,6 @@ header {
     z-index: 2;
     margin-bottom: 100px;
 }
-
 header .container {
     position: relative;
     display: flex;
@@ -144,7 +130,6 @@ header .container {
     align-items: center;
     min-height: 98px;
 }
-
 header .container::before {
    content: "";
     width: calc(100% - 30px);
@@ -153,28 +138,21 @@ header .container::before {
     position: absolute;
     bottom: 0px;
 }
-
-
-
-
 .container .form {
     padding-left: 20px;
     border-left: 2px solid white;
     margin-left: 10px;
     color: white;
 }
-
 .header .container a img {
     height: 40px;
 }
-
 header .container nav {
     display: flex;
     flex: 1;
     justify-content: flex-end;
    
 }
-
 header .container nav .toggle-menu {
     font-size: 22px;
     position: absolute;
@@ -183,15 +161,11 @@ header .container nav .toggle-menu {
     transform: translate(-65px, -11px);
     color: white;
 }
-
-
 header .container nav ul {
     display: flex;
     list-style: none;
     position: relative;
-    
 }
-
 header .container nav li a {
     text-decoration: none;
     display: block;
@@ -200,14 +174,10 @@ header .container nav li a {
     position: relative;
     color: white;
 }
-
 header .container nav li .active , header .container nav li a:hover {
     color: var(--main-color);
     border-bottom: 1px solid var(--main-color);
 } 
-
-
-
 /* ============================ */
 /* ==== End Header Section ==== */
 /* ============================ */
@@ -221,8 +191,7 @@ header .container nav li .active , header .container nav li a:hover {
     background-image: url(../images/landing.jpg);
     background-size: cover;
     background-position:center;
-    background-color: #777;
-   
+    background-color: var(--bg-color-failed);
 }
 .landing .container .text {
     position: absolute;
@@ -233,7 +202,6 @@ header .container nav li .active , header .container nav li a:hover {
     background-color: var(--transparent-color);
     color: white;
     padding: 50px;
-
 }
 
 .landing .container .text h2 {
@@ -242,7 +210,6 @@ header .container nav li .active , header .container nav li a:hover {
     font-size: 32px;
     padding-left: 50px;
 }
-
 .landing .container .text p {
     font-weight: normal;
     line-height: var(--main-heading-p-lineHeight);
@@ -250,7 +217,6 @@ header .container nav li .active , header .container nav li a:hover {
     padding-left: 50px;
     
 }
-
 .landing .overlayer {
     position: absolute;
     left: 0;
@@ -260,21 +226,13 @@ header .container nav li .active , header .container nav li a:hover {
     background-color: var(--transparent-color-dark);
 }
 
-.landing .container .angles .left {
+.landing .container .angles .left , 
+.landing .container .angles .right {
     position: absolute;
     color: white;
     left: 35px;
     top: 50%;
-
 }
-
-.landing .container .angles .right {
-     position: absolute;
-    color: white;
-    right: 35px;
-    top: 50%;
-}
-
 
 .landing .container .bullets {
     position: absolute;
@@ -284,7 +242,6 @@ header .container nav li .active , header .container nav li a:hover {
     display: flex;
     list-style: none;
 }
-
 .landing .container .bullets  li {
     border-radius: 50%;
     width: 20px;
@@ -292,13 +249,9 @@ header .container nav li .active , header .container nav li a:hover {
     border: 1px solid white;
     margin-right: 10px;
 }
-
 .landing .container .bullets  .active {
     background-color: var(--main-color);
 }
-
-
-
 /* ============================= */
 /* ==== End Landing Section ==== */
 /* ============================= */
@@ -306,36 +259,28 @@ header .container nav li .active , header .container nav li a:hover {
 /* ================================ */
 /* ==== Start Services Section ==== */
 /* ================================ */
-
 .services .container .services-content {
     display: grid;
     grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
     grid-gap: 60px 40px;
 }
-
 .services .container .services-content .srv-box {
     display: flex;
 }
-
 .services .container .services-content .srv-box i {
     margin-right: 50px;
 }
-
 .services .container .services-content .srv-box .text h3 {
     margin: 0 0 30px;
     color: var(--main-color);
 }
-
 .services .container .services-content .srv-box .text  {
     line-height: var(--main-heading-p-lineHeight);
     color: var(--main-heading-p-color);
 } 
-
-
 /* ============================== */
 /* ==== End Services Section ==== */
 /* ============================== */
-
 
 /* ============================== */
 /* ==== Start Design Section ==== */
@@ -344,14 +289,13 @@ header .container nav li .active , header .container nav li a:hover {
     background-image: url(../images/design-features.jpg);
     background-size: cover;
     background-position: center;
-    background-color: var(--main-heading-h2-beforeAfter-color);
+    background-color: var(--bg-color-failed);
     position: relative;
     height: 600px;
     overflow: hidden;
     display: flex;
     align-items: center;
 } 
-
 .design::before {
     content: "";
     position: absolute;
@@ -361,53 +305,36 @@ header .container nav li .active , header .container nav li a:hover {
     left: 0;
     background-color: var(--transparent-color-dark);
 }
-
-
 .design .image , .design .text {
     position: relative;
     flex: 1;
     z-index: 2;
 }
-
-
 .design .image {
     text-align: center;
 }
-
-
 .design .image img {
     position: relative;
     bottom: -150px;
 }
-
-
 .design .text {
     background-color: var(--transparent-color);
     color: white;
     padding: 50px;
 }
-
-
 .design .text h3 {
     font-size: 24px;
     margin-bottom: 40px;
     font-weight: normal;
     text-transform: uppercase;
 }
-
-
 .design .text ul {
     list-style: none;
     padding: 15px 0;
-
 }
-
-
 .design .text ul li {
     padding: 15px 0;
 }
-
-
 .design .text ul li::before {
     font-family: "Font Awesome 5 Free";
     content: "\f108";
@@ -416,18 +343,13 @@ header .container nav li .active , header .container nav li a:hover {
     position: relative;
     top: 1px;
 }
-
-
-
 /* ============================== */
 /* ==== End Design Section ====== */
 /* ============================== */
 
-
 /* =================================== */
 /* ==== Start Portfolio Section ====== */
 /* =================================== */
-
 .portfolio .container .shuffle {
     list-style: none;
     display: flex;
@@ -442,43 +364,21 @@ header .container nav li .active , header .container nav li a:hover {
     background-color: var(--main-color);
     color: white;
 } 
-
 .portfolio .imgs-container {
     margin-top: 60px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
     overflow: hidden;
-    /* display: flex;
-    flex-wrap: wrap; */
 }
-
-@media (min-width:1200px) {
-    /* 4 columns in full screen */
-    .portfolio .imgs-container {
-        grid-template-columns: repeat(4, minmax(250px , 1fr));
-    }
-}
-
-
 .portfolio .imgs-container .box {
     position: relative;
-    /* --------------------- */
-    /* every box after making the 4 columns is 100% , it means that every box will take the full width in the column */
     width: 100%;
-    /* ------------------------ */
     overflow: hidden;
 }
-
-
 .portfolio .imgs-container .box img {
-    /* --------------------------- */
-    /* This means that the photo will take the full width of box and it can't be over 100% width */
     max-width: 100%;
-    /* ---------------------------- */
     transition: 0.3s;
-    
 } 
-
 .imgs-container .box .caption {
     background-color: white;
     color: black;
@@ -487,19 +387,14 @@ header .container nav li .active , header .container nav li a:hover {
     width: 100%;
     padding: 20px 20px;
 }
-
 .imgs-container .box .caption h4 {
     padding-bottom: 10px;
 }
-
-
 .imgs-container .box .caption p {
     color: var(--main-color);
 }
-
 .portfolio .imgs-container .box:hover .caption {
     display: block;
-    
 }
 
 .portfolio .imgs-container .box:hover img {
@@ -509,11 +404,8 @@ header .container nav li .active , header .container nav li a:hover {
 .imgs-container .box .caption {
     display: none;
 }
-
-
 .portfolio .more  {
     width: fit-content;
-    /* If you want to move the element */
     display: block;
     background-color: var(--main-color);
     padding: 15px 20px;
@@ -528,12 +420,9 @@ header .container nav li .active , header .container nav li a:hover {
 /* ==== End Portfolio Section ====== */
 /* ================================= */
 
-
-
 /* =============================== */
 /* ==== Start Video Section ====== */
 /* ===============================*/
-
 .video {
     position: relative;
 }
@@ -542,7 +431,6 @@ header .container nav li .active , header .container nav li a:hover {
     width: 100%;
     height: 100%;
 }
-
 .video::before {
     content: "";
     position: absolute;
@@ -553,7 +441,6 @@ header .container nav li .active , header .container nav li a:hover {
     background-color: var(--transparent-color-dark);
 
 }
-
 .video .text {
     content: "";
     position: absolute;
@@ -564,7 +451,6 @@ header .container nav li .active , header .container nav li a:hover {
     padding: 50px;
     transform: translateY(-50%)
 }
-
 .video .text h2 , .video .text p {
     margin-bottom: 30px;
     color: white;
@@ -573,19 +459,16 @@ header .container nav li .active , header .container nav li a:hover {
     font-weight: normal;
     text-transform: uppercase;
 }
-
 .video .text button {
     padding: 10px 20px;
     background-color: black;
     text-transform: uppercase;
     color:  white;
+    border-style: none;
 }
-
-
 /* ============================= */
 /* ==== End Video Section ====== */
 /* =============================*/
-
 
 /* =============================== */
 /* ==== Start About Section ====== */
@@ -595,12 +478,10 @@ header .container nav li .active , header .container nav li a:hover {
     overflow: hidden;
 }
 .about .container img {
-   
     position: relative;
     bottom: -120px;
     transform: translateX(25%);
 }
-
 /* =============================== */
 /* ==== End About Section ====== */
 /* ===============================*/
@@ -612,13 +493,12 @@ header .container nav li .active , header .container nav li a:hover {
 .stats {
     position: relative;
     background-image: url(../images/stats.png);
-    background-color: var(--main-heading-h2-beforeAfter-color);
+    background-color: var(--bg-color-failed);
     background-position: center;
     background-size: cover;
     width: 100%;
     height: 450px;
 }
-
 .stats::before {
     content: "";
     position: absolute;
@@ -632,7 +512,6 @@ header .container nav li .active , header .container nav li a:hover {
 .stats .container {
     display: flex;
 }
-
 .stats .container .box {
     padding: 50px;
     z-index: 2;
@@ -640,7 +519,6 @@ header .container nav li .active , header .container nav li a:hover {
     color: white;
     background-color: var(--transparent-color);
 }
-
 .stats .container .box i {
     width: 40px;
     height: 40px;
@@ -648,20 +526,15 @@ header .container nav li .active , header .container nav li a:hover {
     border-radius: 50%;
     margin: 0 72.5px 30px;
 }
-
 .box i::before {
     position: relative;
     top: 10px;
 }
-
 .box .number {
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
 }
-
-
-
 /* =================================== */
 /* ==== Start Ourskills Section ====== */
 /* ===================================*/
@@ -671,28 +544,23 @@ header .container nav li .active , header .container nav li a:hover {
     justify-content: space-between;
     flex-wrap: wrap;
 }
-
-
-.our-skills .container .testimonials {
+.our-skills .container .testimonials ,
+.our-skills .container .skills {
     flex-basis: 45%;
 }
 .our-skills .container .testimonials h3 , .our-skills .container .testimonials p {
     text-align: center;
 }
-
 .our-skills .container .testimonials h3 {
     font-weight: normal;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
-
 .our-skills .container .testimonials p {
     color: var(--main-heading-p-color);
     margin-bottom: 60px;
-    line-height: 2;
-    
+    line-height: 2;  
 }
-
 .our-skills .container .testimonials .content {
     display: flex;
     align-items: center;
@@ -707,25 +575,20 @@ header .container nav li .active , header .container nav li a:hover {
     padding-bottom: 10px;
     border-bottom: 1px solid var(--main-heading-p-color);
 }
-
 .our-skills .container .testimonials .content img {
     width: 100px;
     border-radius: 50%;
     margin-right: 50px;
 }
-
 .testimonials .bullets {
     display: flex;
     justify-content: center;
     list-style: none;
     margin: 50px 0;
-
 }
-
 .testimonials .bullets .active {
     background-color: var(--main-color);
 }
-
 .testimonials .bullets li {
     width: 14px;
     height: 14px;
@@ -733,17 +596,9 @@ header .container nav li .active , header .container nav li a:hover {
     border-radius: 50%;
     border: 1px solid var(--main-heading-p-color);
 }
-
-
-.our-skills .container .skills {
-    flex-basis: 45%;
-}
-
 .our-skills .container .skills h3 , .our-skills .container .skills p {
     text-align: center;
 }
-
-
 .our-skills .container .skills h3 {
     font-weight: normal;
     text-transform: uppercase;
@@ -758,7 +613,6 @@ header .container nav li .active , header .container nav li a:hover {
 .skills .content .prog-holder {
     margin-bottom: 40px;
 }
-
 .skills .content .prog-holder span {
     background-color: #19c8fa; 
     height: 30px; 
@@ -769,7 +623,6 @@ header .container nav li .active , header .container nav li a:hover {
     background-color: #dedadc;
     position: relative;
 }
-
 .skills .content .prog span::before {
     position: absolute;
     content: attr(data-progress);
@@ -784,7 +637,6 @@ header .container nav li .active , header .container nav li a:hover {
     border-radius: 4px;
     text-align: center;
 }
-
 .skills .content .prog span::after {
     content: "";
     border-style: solid;
@@ -794,34 +646,26 @@ header .container nav li .active , header .container nav li a:hover {
     top: -12px;
     right: -8px;
 }
-
 .skills .content .prog-holder h4 {
     font-weight: normal;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
-
-
 /* ================================= */
 /* ==== End Ourskills Section ====== */
 /* =================================*/
 
-
-
-
 /* ================================= */
 /* ==== Start Queto Section ====== */
 /* =================================*/
-
 .quote {
     background-image: url(../images/quote.jpg);
     background-size: cover;
-    background-color: var(--main-heading-h2-beforeAfter-color);
+    background-color: var(--bg-color-failed);
     background-position: center;
     position: relative;
     text-align: center;
 }
-
 .quote::before {
     content: "";
     position: absolute;
@@ -831,7 +675,6 @@ header .container nav li .active , header .container nav li a:hover {
     height: 100%;
     background-color:rgb(0 0 0 / 75%) ;
 }
-
 .quote .container {
     position: relative;
 }
@@ -845,13 +688,9 @@ header .container nav li .active , header .container nav li a:hover {
 .quote .container span {
     color: white;
 }
-
-
 /* ================================= */
 /* ==== End Queto Section ====== */
 /* =================================*/
-
-
 
 /* ================================= */
 /* ==== Start Pricing Section ====== */
@@ -862,13 +701,11 @@ header .container nav li .active , header .container nav li a:hover {
     grid-template-columns: repeat(auto-fill , minmax(250px,1fr));
     grid-gap: 30px;
 }
-
 .pricing .contact-text {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
 }
-
 .pricing .contact-link  {
     display: block;
     width: fit-content;
@@ -880,7 +717,6 @@ header .container nav li .active , header .container nav li a:hover {
     margin: 20px auto;
 
 }
-
 .plans-content .plans .foot a {
     display: block;
     width: fit-content;
@@ -888,25 +724,20 @@ header .container nav li .active , header .container nav li a:hover {
    text-decoration: none;
    padding: 20px 20px;
    margin: 30px auto;
-
 }
 
 .pricing .container .plans {
     flex-basis: 20%;
     text-align: center;
 }
-
 .pricing .container .plans ul {
     list-style: none;
     border-bottom: 1px solid var(--main-color);
 }
-
 .pricing .container .plans ul li {
     padding: 20px;
-    position: relative;
-    
+    position: relative; 
 }
-
 .pricing .container .plans ul li:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -918,25 +749,20 @@ header .container nav li .active , header .container nav li a:hover {
     opacity: 0.5;
     transform: translateX(-50%);
 }
-
 .pricing .container .plans .head {
     padding: 40px 20px;
     border-top: 1px solid var(--main-color);
     border-bottom: 1px solid var(--main-color);
 }
-
 .pricing .container .plans .head h3 {
     margin-bottom: 20px;
     text-transform: uppercase;
 }
-
-
 .pricing .container .plans .head span {
     font-size: 60px;
     position: relative;
     font-weight: bold;
 }
-
 .pricing .container .plans .head span::before {
     position: absolute;
     content: "$";
@@ -944,7 +770,6 @@ header .container nav li .active , header .container nav li a:hover {
     font-size: 25px;
     top: 0px;
 }
-
 .pricing .container .plans .head span::after {
     position: absolute;
     content: "/Mo";
@@ -952,12 +777,9 @@ header .container nav li .active , header .container nav li a:hover {
     right: -50px;
     bottom: 0;
 }
-
-
 /* ================================= */
 /* ==== End Pricing Section ====== */
 /* =================================*/
-
 
 /* ================================= */
 /* ==== Start Subscribe Section ====== */
@@ -967,10 +789,9 @@ header .container nav li .active , header .container nav li a:hover {
     background-image: url(../images/subscribe.jpg);
     background-size: cover;
     background-position: center;
-    background-color: #333;
+    background-color: var(--bg-color-failed);
     position: relative;
 }
-
 .subscribe::before {
     content: "";
     position: absolute;
@@ -980,8 +801,6 @@ header .container nav li .active , header .container nav li a:hover {
     height: 100%;
     background-color:rgb(0 0 0 / 75%);
 }
-
-
 .subscribe .container {
     position: relative;
     display: flex;
@@ -989,7 +808,6 @@ header .container nav li .active , header .container nav li a:hover {
     align-items: center;
     justify-content: space-between;
 }
-
 .subscribe .container form {
     width: 400px;
     max-width: 100%;
@@ -1015,7 +833,6 @@ header .container nav li .active , header .container nav li a:hover {
 .subscribe .container form::placeholder {
     color: white;
 }
-
 .subscribe .container form input[type="submit"] {
     background-color: var(--main-color);
     color: white;
@@ -1030,18 +847,13 @@ header .container nav li .active , header .container nav li a:hover {
     line-height: 2;
 }
 
-
-
 /* ================================= */
 /* ==== End Subscribe Section ====== */
 /* =================================*/
 
-
-
 /* ================================= */
 /* ==== Start Contact Section ====== */
 /* =================================*/
-
 .contact .container .contact-content {
     display: flex;
     justify-content: space-between;
@@ -1060,11 +872,9 @@ header .container nav li .active , header .container nav li a:hover {
     border: 1px solid #ccc;
     width: 100%;
 }
-
 .contact-content form textarea.main-input {
     height: 200px;
 }
-
 .contact-content form input[type="submit"] {
     position: absolute;
     right: 0;
@@ -1074,7 +884,6 @@ header .container nav li .active , header .container nav li a:hover {
     color: white;
     border-color: transparent;
 }
-
 .contact-content .info {
     flex-basis: 25%;
 }
@@ -1083,30 +892,22 @@ header .container nav li .active , header .container nav li a:hover {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 18px;
-    
 }
-
 .contact-content .info:first-of-type h4 {
     margin-bottom: 30px;
 }
-
 .contact-content .info span {
     display: block;
     color: var(--main-heading-p-color);
     margin-bottom: 10px;
-
 }
-
 .contact-content .info h4:nth-of-type(2)  {
     margin-top: 90px ;
 }
-
 .contact-content .info address {
     color: var(--main-heading-p-color);
     line-height: 2;
 }
-
-
 /* ================================= */
 /* ==== End Contact Section ====== */
 /* =================================*/
@@ -1118,14 +919,13 @@ footer {
     background-image: url(../images/subscribe.jpg);
     background-size: cover;
     background-position: center;
-    background-color: #333;
+    background-color: var(--bg-color-failed);
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
     text-align: center;
     color: white;
 }
-
 footer::before {
     content: "";
     position: absolute;
@@ -1135,7 +935,6 @@ footer::before {
     height: 100%;
     background-color:rgb(0 0 0 / 75%);
 }
-
 footer .container {
     position: relative;
 }
@@ -1143,7 +942,6 @@ footer .container {
 footer .container img {
     margin-bottom: 30px;
 }
-
 footer .container p:not(.copyright) {
     text-transform: uppercase;
     padding: 20px;
@@ -1152,7 +950,6 @@ footer .container p:not(.copyright) {
     width: fit-content;
     margin: 20px auto;
 }
-
  footer .container .social-icons {
     margin: 0 auto 80px ;
  }
@@ -1167,17 +964,14 @@ footer .container .copyright {
 footer .container .copyright .leon {
     color: var(--main-color);
 }
-
-
 /* ================================= */
 /* ==== End Footer Section ====== */
 /* =================================*/
 
+/* ========================= */
+/* ==== Media Quaries ====== */
+/* ========================= */
 
-
-/* =================================== */
-/* ========== Media Queries ========== */
-/* =================================== */
 
 /* Small screens (mobiles) : up to 760px */
  @media (max-width:760px) {
@@ -1197,38 +991,97 @@ footer .container .copyright .leon {
     background-color: #333;
    }
 
-   /* header .container .form {
-    flex: 1;
-    } */
-    /* End Header Section */
+   /* End Header Section */
 
-    /* Landing Section */
+   /* Start Landing Section */
+
+   .landing {
+    background-position-x: left;
+   }
 
     .landing .overlayer .text {
         width: 100%;
         max-width: 100%;
-        transform: translateY(-45%);
     }
 
+    .landing .container .angles {
+        display: none;
+    }
 
-      .stats .container  {
-    flex-direction: column;
-  }
+    /* End Landing Section */
 
-   .design .image {
-    display: none;
-  }
 
-   .services .srv-box {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-  .services .srv-box i {
-    margin: 0 0 30px;
-  }
+    /* Start Services Section */
+    .services .container .services-content .srv-box {
+        flex-direction: column;
+        text-align: center;
+    }
 
+    .services .container .services-content .srv-box i {
+        margin:0 0 30px 0;
+    }
+
+    /* End Services Section */
+
+    /* Start Design Section */
+    .design .image {
+        display: none;
+    }
+    /* End design section */
+
+
+    /* Start About Section */
+
+    .about .container img {
+    position: relative;
+        display: block;
+        bottom: -45px;
+        right: 22%;
+        width: calc(100% - 30px);
+    }
+    /* End About Section */
+
+    /* Start Stats Section */
+
+    .stats {
+        height: fit-content;
+    }
+
+    .stats .container {
+        flex-direction: column;
+    }
+    /* End Stats Section */
+
+
+    /* Start Ourskills Section */
+    .our-skills .container {
+        flex-direction: column;
+    }
+    /* End Ourskills Section */
+
+    /* Start subscribe Section */
+    .subscribe .container {
+        flex-direction: column;
+    }
+    .subscribe .container form  {
+        margin-left: auto;
+    }
+   
+    
+
+    .subscribe .container p {
+        margin-top: 30px;
+    }
+    /* End subscribe Section */
+
+    /* Start Contact Section */
+    .contact .container .contact-content  {
+        flex-direction: column-reverse;
+    }
+    .contact .container .contact-content form {
+        width: 100%;
+    }
+    /* End Contact Section */
 
 }
 
@@ -1243,21 +1096,41 @@ footer .container .copyright .leon {
     
 }
 
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .container {
+        width: 750px;
+    }
+    
+}
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
-   
+    .container {
+    width: 980px;
+   }
+    
 }
    
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) { 
-    
+     .container {
+    width: 1170px;
+   }
+
+    .portfolio .imgs-container {
+        grid-template-columns: repeat(4, minmax(250px , 1fr));
+    }
 
  }
 
 /* XXL devices (larger desktops, 1400px and up) */
 @media (min-width: 1350px) {
-   
+   .container {
+    width: 1300px;
+   }
     
 }
 
