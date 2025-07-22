@@ -31,12 +31,14 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow:hidden;
+    /* overflow: hidden; */
 }
 
 body {
     font-family: "Open Sans", sans-serif;
     background-color: var(--main-background-color);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 /* =========================== */
@@ -307,7 +309,7 @@ header .container nav li .active , header .container nav li a:hover {
 
 .services .container .services-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(450px , 1fr));
+    grid-template-columns: repeat(auto-fill , minmax(250px , 1fr));
     grid-gap: 60px 40px;
 }
 
@@ -1207,6 +1209,25 @@ footer .container .copyright .leon {
         max-width: 100%;
         transform: translateY(-45%);
     }
+
+
+      .stats .container  {
+    flex-direction: column;
+  }
+
+   .design .image {
+    display: none;
+  }
+
+   .services .srv-box {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .services .srv-box i {
+    margin: 0 0 30px;
+  }
 
 
 }
